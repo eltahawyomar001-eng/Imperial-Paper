@@ -68,7 +68,7 @@ const diagrams: Record<string, React.FC<{ className?: string }>> = {
 }
 
 export default function StructuralLibraryPage() {
-  const [activeTab, setActiveTab] = useState(STRUCTURAL_TABS[0].id)
+  const [activeTab, setActiveTab] = useState<string>(STRUCTURAL_TABS[0].id)
   const currentType = structuralTypes[activeTab]
 
   return (
