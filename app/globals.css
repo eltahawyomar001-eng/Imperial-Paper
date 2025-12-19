@@ -1,0 +1,328 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   IMPERIAL PAPER - Global Styles
+   Client-First Naming Convention
+   ======================================== */
+
+:root {
+  /* CSS Custom Properties for dynamic theming */
+  --color-bg: #fafafa;
+  --color-bg-secondary: #f5f5f5;
+  --color-text: #171717;
+  --color-text-muted: #525252;
+  --color-accent: #a67c52;
+  --color-border: rgba(0, 0, 0, 0.06);
+  --color-glass: rgba(255, 255, 255, 0.7);
+  --color-glass-border: rgba(255, 255, 255, 0.2);
+  
+  /* Noise texture for glassmorphism */
+  --noise-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-primary-50 text-primary-900 antialiased;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+/* Focus states for accessibility */
+*:focus-visible {
+  @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-primary-50;
+}
+
+/* Selection styling */
+::selection {
+  @apply bg-accent/20 text-primary-900;
+}
+
+/* ========================================
+   Client-First Utility Classes
+   ======================================== */
+
+@layer components {
+  /* === Layout === */
+  .section {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+  
+  .section-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  .section-lg {
+    @apply py-28 md:py-36 lg:py-44;
+  }
+  
+  .container {
+    @apply mx-auto w-full max-w-7xl px-5 md:px-8 lg:px-12;
+  }
+  
+  .container-sm {
+    @apply mx-auto w-full max-w-5xl px-5 md:px-8 lg:px-12;
+  }
+  
+  .container-lg {
+    @apply mx-auto w-full max-w-screen-2xl px-5 md:px-8 lg:px-12;
+  }
+  
+  /* === Typography === */
+  .heading-display {
+    @apply text-display-lg md:text-display-xl lg:text-display-2xl font-medium tracking-tight text-primary-900;
+  }
+  
+  .heading-xl {
+    @apply text-display-md md:text-display-lg lg:text-display-xl font-medium tracking-tight text-primary-900;
+  }
+  
+  .heading-lg {
+    @apply text-display-sm md:text-display-md font-medium tracking-tight text-primary-900;
+  }
+  
+  .heading-md {
+    @apply text-xl md:text-2xl font-medium tracking-tight text-primary-900;
+  }
+  
+  .heading-sm {
+    @apply text-lg md:text-xl font-medium text-primary-900;
+  }
+  
+  .text-body {
+    @apply text-body-md text-primary-600 leading-relaxed;
+  }
+  
+  .text-body-lg {
+    @apply text-lg text-primary-600 leading-relaxed;
+  }
+  
+  .text-muted {
+    @apply text-body-sm text-primary-400;
+  }
+  
+  .text-label {
+    @apply text-body-xs font-medium uppercase tracking-wider text-primary-400;
+  }
+  
+  /* === Glass Effects === */
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-glass;
+  }
+  
+  .glass-panel-dark {
+    @apply bg-primary-900/80 backdrop-blur-xl border border-white/10 shadow-glass;
+  }
+  
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-lg border border-white/30 rounded-2xl shadow-card;
+  }
+  
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:bg-white/80 hover:shadow-elevated hover:-translate-y-1;
+  }
+  
+  /* === Buttons === */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-medium transition-all duration-200;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply btn px-6 py-3 bg-primary-900 text-white rounded-full;
+    @apply hover:bg-primary-800 active:scale-[0.98];
+  }
+  
+  .btn-secondary {
+    @apply btn px-6 py-3 bg-white text-primary-900 rounded-full border border-primary-200;
+    @apply hover:bg-primary-50 hover:border-primary-300 active:scale-[0.98];
+  }
+  
+  .btn-ghost {
+    @apply btn px-4 py-2 text-primary-600 rounded-lg;
+    @apply hover:bg-primary-100 hover:text-primary-900;
+  }
+  
+  .btn-accent {
+    @apply btn px-6 py-3 bg-accent text-white rounded-full;
+    @apply hover:bg-accent-dark active:scale-[0.98] shadow-glow hover:shadow-glow-strong;
+  }
+  
+  .btn-icon {
+    @apply btn p-3 rounded-full bg-white/60 backdrop-blur-sm border border-white/30;
+    @apply hover:bg-white/80 hover:scale-105 active:scale-95;
+  }
+  
+  /* === Form Elements === */
+  .input {
+    @apply w-full px-4 py-3 bg-white/60 backdrop-blur-sm border border-primary-200 rounded-xl;
+    @apply text-primary-900 placeholder:text-primary-400;
+    @apply transition-all duration-200;
+    @apply focus:bg-white focus:border-accent focus:ring-2 focus:ring-accent/20;
+  }
+  
+  .input-error {
+    @apply border-red-400 focus:border-red-500 focus:ring-red-500/20;
+  }
+  
+  .textarea {
+    @apply input min-h-[120px] resize-none;
+  }
+  
+  .label {
+    @apply block text-body-sm font-medium text-primary-700 mb-2;
+  }
+  
+  .error-text {
+    @apply text-body-xs text-red-500 mt-1;
+  }
+  
+  /* === Filter Chips === */
+  .chip {
+    @apply inline-flex items-center gap-1.5 px-4 py-2 text-body-sm font-medium rounded-full;
+    @apply transition-all duration-200 cursor-pointer;
+    @apply border border-primary-200 text-primary-600 bg-white/60 backdrop-blur-sm;
+    @apply hover:bg-primary-100 hover:border-primary-300;
+  }
+  
+  .chip-active {
+    @apply bg-primary-900 text-white border-primary-900;
+    @apply hover:bg-primary-800 hover:border-primary-800;
+  }
+  
+  /* === Cards === */
+  .card {
+    @apply bg-white rounded-2xl border border-primary-100 shadow-card overflow-hidden;
+  }
+  
+  .card-hover {
+    @apply card transition-all duration-300;
+    @apply hover:shadow-elevated hover:-translate-y-1 hover:border-primary-200;
+  }
+  
+  /* === Grid Layouts === */
+  .grid-auto-fill {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .grid-work {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+  
+  @screen md {
+    .grid-work {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @screen lg {
+    .grid-work {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* === Dividers === */
+  .divider {
+    @apply h-px bg-gradient-to-r from-transparent via-primary-200 to-transparent;
+  }
+  
+  .divider-vertical {
+    @apply w-px h-full bg-gradient-to-b from-transparent via-primary-200 to-transparent;
+  }
+}
+
+/* ========================================
+   Custom Scrollbar
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-400;
+}
+
+/* ========================================
+   Noise Overlay for Glassmorphism
+   ======================================== */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--noise-texture);
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ========================================
+   Gradient Backgrounds
+   ======================================== */
+.gradient-hero {
+  background: linear-gradient(
+    135deg,
+    rgba(250, 250, 250, 1) 0%,
+    rgba(245, 245, 245, 1) 50%,
+    rgba(240, 238, 235, 1) 100%
+  );
+}
+
+.gradient-accent {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    #c9a77c 100%
+  );
+}
+
+/* ========================================
+   Tab Underline Animation
+   ======================================== */
+.tab-underline {
+  @apply relative;
+}
+
+.tab-underline::after {
+  content: '';
+  @apply absolute bottom-0 left-0 h-0.5 bg-accent w-0 transition-all duration-300;
+}
+
+.tab-underline[data-active="true"]::after,
+.tab-underline:hover::after {
+  @apply w-full;
+}
+
+/* ========================================
+   Loading States
+   ======================================== */
+.skeleton {
+  @apply bg-gradient-to-r from-primary-100 via-primary-50 to-primary-100;
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
