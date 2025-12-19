@@ -1,35 +1,59 @@
+<div align="center">
+
 # Imperial Paper
 
-A premium demo website for Imperial Paper, a structural packaging design firm based in Los Angeles. Built with Next.js 14, TypeScript, TailwindCSS, and Framer Motion.
+### Premium Structural Packaging Design
 
-![Next.js](https://img.shields.io/badge/Next.js-14-black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38bdf8)
-![Framer Motion](https://img.shields.io/badge/Framer%20Motion-10.16-ff69b4)
+A production-quality demo website for a luxury packaging design firm based in Los Angeles.
+
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-10.16-FF0055?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](./LICENSE)
+
+[Live Demo](#) · [Report Bug](https://github.com/eltahawyomar001-eng/Imperial-Paper/issues) · [Request Feature](https://github.com/eltahawyomar001-eng/Imperial-Paper/issues)
+
+</div>
+
+---
 
 ## Overview
 
 This project demonstrates a production-quality marketing website with:
 
-- **6+ pages**: Home, Work Gallery, Work Detail, Capabilities, About, Contact, Structural Library, Legal
-- **Advanced filtering**: Multi-select filters, search, and sort with animated transitions
-- **Accessibility-first**: Keyboard navigation, ARIA labels, proper focus management
-- **Premium animations**: Page transitions, scroll reveals, micro-interactions
-- **Responsive design**: Mobile-first approach with fluid typography and layouts
-- **Client-First CSS**: Consistent naming convention for maintainability
+- **8 Responsive Pages** — Home, Work Gallery, Work Detail, Capabilities, About, Contact, Structural Library, Legal
+- **Advanced Filtering** — Multi-select filters, search, and sort with animated transitions
+- **Accessibility-First** — Keyboard navigation, ARIA labels, proper focus management
+- **Premium Animations** — Page transitions, scroll reveals, micro-interactions
+- **Responsive Design** — Mobile-first approach with fluid typography and layouts
+- **Client-First CSS** — Consistent naming convention for maintainability
 
-## Getting Started
+<br/>
+
+## Screenshots
+
+| Home | Work Gallery | Structural Library |
+|:----:|:------------:|:------------------:|
+| Hero with animated stats | Filtering with LayoutGroup | Keyboard-accessible tabs |
+
+<br/>
+
+## Quick Start
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm, yarn, or pnpm
 
 ### Installation
 
 ```bash
-# Clone or navigate to the project
-cd "Imprial page"
+# Clone the repository
+git clone https://github.com/eltahawyomar001-eng/Imperial-Paper.git
+
+# Navigate to directory
+cd Imperial-Paper
 
 # Install dependencies
 npm install
@@ -194,10 +218,30 @@ All mock content is centralized in the `/data` directory:
 - Safari 14+
 - Edge 90+
 
+<br/>
+
+## Contributing
+
+Contributions are welcome! Please read our [Contributing Guide](./CONTRIBUTING.md) for details.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+<br/>
+
 ## License
 
-This is a demo project. All content is fictional and for demonstration purposes only.
+Distributed under the MIT License. See [`LICENSE`](./LICENSE) for more information.
+
+<br/>
 
 ---
 
-Built with care in Los Angeles.
+<div align="center">
+
+**[Imperial Paper](https://github.com/eltahawyomar001-eng/Imperial-Paper)** · Built with care in Los Angeles
+
+</div>
